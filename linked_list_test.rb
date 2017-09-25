@@ -22,7 +22,7 @@ class LinkedListTest < Minitest::Test
   def test_count_can_count
     list = LinkedList.new
     result = list.count
-    assert_equal(1, 1)
+    assert_equal(1, result)
   end
 
   def test_can_add_appends_to_string

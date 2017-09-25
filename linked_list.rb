@@ -47,20 +47,23 @@ class LinkedList
     string
   end
 
+
+#
   def prepend(beat)
       if @head.nil?
         @head = Node.new(beat)
       else
         local_head = @head
         @head = Node.new(beat)
-        @head.next_node = local_head
+        @head.next_node = local_head #
       end
   end
 
   def insert(position, beat)
       if position > count
         p "position does not exist"
-      else this_node = @head
+      else
+      this_node = @head
       count = 1
         until count == position
           this_node = this_node.next_node
@@ -75,3 +78,6 @@ class LinkedList
 
 
 end
+
+list = LinkedList.new
+require 'pry'; binding.pry
