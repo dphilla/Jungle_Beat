@@ -48,7 +48,6 @@ class LinkedList
   end
 
 
-#
   def prepend(beat)
       if @head.nil?
         @head = Node.new(beat)
@@ -76,8 +75,34 @@ class LinkedList
       end
     end
 
+    def find(beat)
+      this_node = @head
+      counter = 0
+      until counter == count
+        counter += 1
+        if this_node.data == beat
+          puts "#{beat} is at position #{counter}"
+          break
+        elsif this_node.next_node == nil
+         puts "#{beat} doesn't exist"
+        else
+        end
+        this_node = this_node.next_node
+      end
+    end
+
+    def pop
+
+    end
+
+    def includes?(beat)
+
+    end
+
 
 end
 
-list = LinkedList.new
 require 'pry'; binding.pry
+list = LinkedList.new
+list.append("boop")
+list.append("beep")
