@@ -77,18 +77,21 @@ class LinkedList
 
     def find(beat)
       this_node = @head
-      counter = 0
-      until counter == count
-        counter += 1
+        end_loop = false
+        counter = 0
+        until end_loop == true
+          counter += 1
         if this_node.data == beat
-          p "#{beat} is at position #{counter}"
-          break
+          end_loop = true
+          message ="#{beat} is at position #{counter}"
         elsif this_node.next_node == nil
-         p "#{beat} doesn't exist"
+          end_loop = true
+          message = "#{beat} doesn't exist"
         else
-        end
         this_node = this_node.next_node
+        end
       end
+        p message
     end
 
     def pop
@@ -114,7 +117,3 @@ class LinkedList
     end
 end
 
-#require 'pry'; binding.pry
-#list = LinkedList.new
-#list.append("boop")
-#list.append("beep")

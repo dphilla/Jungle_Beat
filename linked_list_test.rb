@@ -73,7 +73,13 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_can_pop
-    skip
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    total = list.count
+    list.pop
+    assert_equal(total - 1, list.count)
   end
 
   def test_can_return_include?
