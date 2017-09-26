@@ -102,10 +102,16 @@ class LinkedList
     end
 
     def includes?(beat)
-
+      this_node = @head
+      until this_node.next_node.nil? || this_node.data == beat
+        this_node = this_node.next_node
+      end
+      if this_node.data == beat
+        true
+      else
+        false
+      end
     end
-
-
 end
 
 require 'pry'; binding.pry
