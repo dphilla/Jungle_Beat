@@ -22,7 +22,7 @@ class LinkedListTest < Minitest::Test
   def test_count_can_count
     list = LinkedList.new
     result = list.count
-    assert_equal(1, result)
+    assert_equal(0, result)
   end
 
   def test_can_add_appends_to_string
@@ -64,14 +64,25 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_can_find
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    result = list.find("dop")
+    assert_equal("dop is at position 1", result)
+  end
+
+  def test_can_pop
     skip
   end
 
   def test_can_return_include?
-    skip
-  end
-  def test_can_pop
-    skip
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    result = list.includes?("dop")
+    assert_equal(true, result)
   end
 
 

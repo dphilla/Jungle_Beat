@@ -81,10 +81,10 @@ class LinkedList
       until counter == count
         counter += 1
         if this_node.data == beat
-          puts "#{beat} is at position #{counter}"
+          p "#{beat} is at position #{counter}"
           break
         elsif this_node.next_node == nil
-         puts "#{beat} doesn't exist"
+         p "#{beat} doesn't exist"
         else
         end
         this_node = this_node.next_node
@@ -114,7 +114,7 @@ class LinkedList
     end
 end
 
-require 'pry'; binding.pry
-list = LinkedList.new
-list.append("boop")
-list.append("beep")
+#require 'pry'; binding.pry
+#list = LinkedList.new
+#list.append("boop")
+#list.append("beep")
