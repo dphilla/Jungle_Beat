@@ -92,7 +92,13 @@ class LinkedList
     end
 
     def pop
-
+      this_node = @head
+      until this_node.next_node.next_node.nil?
+        this_node = this_node.next_node
+      end
+      pop_return = this_node.next_node
+      this_node.next_node = nil
+      pop_return
     end
 
     def includes?(beat)
